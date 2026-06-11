@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXU — Dashboard</title>
+<link rel="stylesheet" href="./css/style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            dark:    '#3d5165',
+            card:    '#4a6278',
+            sidebar: '#3a5066',
+            accent:  '#5d7a91',
+          }
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-brand-dark text-white font-sans min-h-screen flex">
+
+  <!-- SIDEBAR -->
+  <aside class="w-56 min-h-screen bg-brand-sidebar border-r border-white/10 flex flex-col py-6 flex-shrink-0">
+    <div class="flex items-center gap-2.5 px-5 mb-9">
+      <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center font-bold text-lg">N</div>
+      <span class="text-xl font-bold tracking-widest">NEX.U</span>
+    </div>
+    <nav class="flex flex-col">
+      <a href="#" class="flex items-center gap-3 px-5 py-3 text-sm text-white border-l-2 border-emerald-400 bg-white/10">📈 Dashboard</a>
+      <a href="#" class="flex items-center gap-3 px-5 py-3 text-sm text-white/60 border-l-2 border-transparent hover:bg-white/5 hover:text-white transition-colors">💼 Carteira</a>
+      <a href="#" class="flex items-center gap-3 px-5 py-3 text-sm text-white/60 border-l-2 border-transparent hover:bg-white/5 hover:text-white transition-colors">🔄 Movimentações</a>
+      <a href="#" class="flex items-center gap-3 px-5 py-3 text-sm text-white/60 border-l-2 border-transparent hover:bg-white/5 hover:text-white transition-colors">🧪 Análises</a>
+      <a href="#" class="flex items-center gap-3 px-5 py-3 text-sm text-white/60 border-l-2 border-transparent hover:bg-white/5 hover:text-white transition-colors">📁 Relatórios</a>
+      <a href="#" class="flex items-center gap-3 px-5 py-3 text-sm text-white/60 border-l-2 border-transparent hover:bg-white/5 hover:text-white transition-colors">⚙️ Configurações</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="flex-1 flex flex-col">
+
+    <!-- TOPBAR -->
+    <header class="flex items-center gap-4 px-7 py-4 bg-brand-sidebar border-b border-white/10">
+      <span class="flex-1 text-lg font-semibold">Olá, José Higor</span>
+      <div class="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 w-52">
+        <span class="text-white/40 text-sm">🔍</span>
+        <input type="text" placeholder="Search chats"
+          class="bg-transparent outline-none text-white placeholder-white/40 text-sm w-full">
+      </div>
+      <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 text-base cursor-pointer hover:bg-white/20 transition-colors">↪</div>
+      <div class="w-9 h-9 rounded-full bg-brand-accent flex items-center justify-center text-sm font-semibold">JH</div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="p-7 flex flex-col gap-5">
+
+      <!-- KPIs -->
+      <div class="grid grid-cols-3 gap-3">
+        <div class="bg-brand-card rounded-xl p-5 border border-white/10">
+          <p class="text-xs text-white/55 mb-2 flex items-center gap-1.5">
+            Total Patrimônio
+            <span class="w-3.5 h-3.5 rounded-full border border-white/30 inline-flex items-center justify-center text-[9px] text-white/40 leading-none">i</span>
+          </p>
+          <p class="text-2xl font-semibold">R$ 45.678,90</p>
+        </div>
+        <div class="bg-brand-card rounded-xl p-5 border border-white/10">
+          <p class="text-xs text-white/55 mb-2 flex items-center gap-1.5">
+            Desempenho
+            <span class="w-3.5 h-3.5 rounded-full border border-white/30 inline-flex items-center justify-center text-[9px] text-white/40 leading-none">i</span>
+          </p>
+          <p class="text-2xl font-semibold text-emerald-400">+2.405</p>
+        </div>
+        <div class="bg-brand-card rounded-xl p-5 border border-white/10">
+          <p class="text-xs text-white/55 mb-2 flex items-center gap-1.5">
+            Saldo Disponível
+            <span class="w-3.5 h-3.5 rounded-full border border-white/30 inline-flex items-center justify-center text-[9px] text-white/40 leading-none">i</span>
+          </p>
+          <p class="text-2xl font-semibold">R$ 10.353</p>
+        </div>
+      </div>
+
+      <!-- Charts row -->
+      <div class="grid grid-cols-[1.35fr_1fr] gap-4">
+
+        <!-- Gráfico SVG -->
+        <div class="bg-brand-card rounded-xl p-5 border border-white/10">
+          <p class="text-[11px] uppercase tracking-wider text-white/50 mb-4 flex items-center gap-1.5">
+            Desempenho da Carteira
+            <span class="w-3.5 h-3.5 rounded-full border border-white/30 inline-flex items-center justify-center text-[9px] text-white/40 leading-none">i</span>
+          </p>
+          <svg viewBox="0 0 420 180" class="w-full" xmlns="http://www.w3.org/2000/svg">
+            <!-- linhas de grade -->
+            <line x1="42" y1="10"  x2="415" y2="10"  stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+            <line x1="42" y1="42"  x2="415" y2="42"  stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+            <line x1="42" y1="74"  x2="415" y2="74"  stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+            <line x1="42" y1="106" x2="415" y2="106" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+            <line x1="42" y1="138" x2="415" y2="138" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+            <!-- labels Y -->
+            <text x="0" y="14"  fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">R$50k</text>
+            <text x="0" y="46"  fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">R$45k</text>
+            <text x="0" y="78"  fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">R$40k</text>
+            <text x="0" y="110" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">R$35k</text>
+            <text x="0" y="142" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">R$30k</text>
+            <!-- linha do gráfico -->
+            <!-- pontos mapeados: 31k→138, 33.5k→106, 36k→88, 34.5k→100, 38k→72, 40.5k→50, 44k→26, 49.5k→10 -->
+            <polyline
+              points="42,138 100,118 158,104 216,112 274,82 332,56 374,28 415,10"
+              fill="none"
+              stroke="#34d399"
+              stroke-width="2.5"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            />
+            <!-- ponto final -->
+            <circle cx="415" cy="10" r="5" fill="#34d399"/>
+            <!-- labels X -->
+            <text x="38"  y="162" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">23</text>
+            <text x="96"  y="162" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">24</text>
+            <text x="154" y="162" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">25</text>
+            <text x="212" y="162" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">26</text>
+            <text x="270" y="162" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">27</text>
+            <text x="328" y="162" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">28</text>
+            <text x="370" y="162" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">29</text>
+            <text x="410" y="162" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">30</text>
+          </svg>
+        </div>
+
+        <!-- Recomendações -->
+        <div class="bg-brand-card rounded-xl p-5 border border-white/10">
+          <p class="text-[11px] uppercase tracking-wider text-white/50 mb-4 flex items-center gap-1.5">
+            Recomendações
+            <span class="w-3.5 h-3.5 rounded-full border border-white/30 inline-flex items-center justify-center text-[9px] text-white/40 leading-none">i</span>
+          </p>
+          <table class="w-full border-collapse">
+            <thead>
+              <tr>
+                <th class="text-[10px] text-white/40 font-normal text-left pb-2">venda/compra</th>
+                <th class="text-[10px] text-white/40 font-normal text-right pb-2">Posição</th>
+                <th class="text-[10px] text-white/40 font-normal text-right pb-2">variação %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-white/10">
+                <td class="py-2.5 text-xs"><span class="text-emerald-400 font-semibold">Compra</span> WEGE3</td>
+                <td class="py-2.5 text-xs text-right">4321</td>
+                <td class="py-2.5 text-xs text-right text-emerald-400 font-medium">+84%</td>
+              </tr>
+              <tr class="border-t border-white/10">
+                <td class="py-2.5 text-xs"><span class="text-emerald-400 font-semibold">Compra</span> PETR4</td>
+                <td class="py-2.5 text-xs text-right">3128</td>
+                <td class="py-2.5 text-xs text-right text-emerald-400 font-medium">+2%</td>
+              </tr>
+              <tr class="border-t border-white/10">
+                <td class="py-2.5 text-xs"><span class="text-red-400 font-semibold">Venda</span> ITUB4</td>
+                <td class="py-2.5 text-xs text-right">4033</td>
+                <td class="py-2.5 text-xs text-right text-red-400 font-medium">-8%</td>
+              </tr>
+              <tr class="border-t border-white/10">
+                <td class="py-2.5 text-xs"><span class="text-emerald-400 font-semibold">Compra</span> VALE3</td>
+                <td class="py-2.5 text-xs text-right">2104</td>
+                <td class="py-2.5 text-xs text-right text-emerald-400 font-medium">+33%</td>
+              </tr>
+              <tr class="border-t border-white/10">
+                <td class="py-2.5 text-xs"><span class="text-red-400 font-semibold">Venda</span> BPAC11</td>
+                <td class="py-2.5 text-xs text-right">2003</td>
+                <td class="py-2.5 text-xs text-right text-emerald-400 font-medium">+30%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
